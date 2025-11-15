@@ -63,43 +63,36 @@ const impactStats = [
   { label: "Avg. response time", value: "48h" },
 ];
 
+// Featured projects (image, focus, and description)
+const featuredProjects = [
+  {
+    src: "/images/renewable-hub.avif",
+    title: "Community Renewable Hub",
+    description:
+      "Microgrid program delivering reliable power to underserved barangays.",
+  },
+  {
+    src: "/images/solar-panels.avif",
+    title: "Rooftop Solar Program",
+    description:
+      "Commercial and industrial rooftops cutting costs and grid load.",
+  },
+  {
+    src: "/images/thermal-plant.avif",
+    title: "Biomass Thermal Plant",
+    description:
+      "Agricultural waste converted into clean, dispatchable baseload.",
+  },
+  {
+    src: "/images/windmill-projects.avif",
+    title: "Coastal Wind Expansion",
+    description: "Onshore turbines optimized for local monsoon wind profiles.",
+  },
+];
+
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white via-[#f3f7f0] to-white text-slate-900">
-      {/* Navigation Bar */}
-      <header className="sticky top-0 z-50 border-b border-white/40 bg-white/70 backdrop-blur-xl">
-        <nav className="mx-auto flex w-full max-w-7xl items-center justify-between px-6 py-4">
-          <a href="#" className="flex items-center gap-2">
-            <Image
-              src="/images/gridly-logo.png"
-              alt="Gridly"
-              width={40}
-              height={40}
-              priority
-            />
-          </a>
-          <div className="hidden items-center gap-6 text-sm font-medium text-slate-600 md:flex">
-            <Button variant="ghost" className="text-sm" asChild>
-              <a href="#">Home</a>
-            </Button>
-            <Button variant="ghost" className="text-sm" asChild>
-              <a href="#about">About</a>
-            </Button>
-            <Button variant="ghost" className="text-sm" asChild>
-              <a href="#contact">Contact</a>
-            </Button>
-          </div>
-          <div className="flex items-center gap-3">
-            <Button
-              className="rounded-full bg-[#36a03d] px-6 font-semibold text-white shadow-lg shadow-[#36a03d]/20 transition hover:bg-[#2e8230]"
-              asChild
-            >
-              <a href="#map">Launch Map</a>
-            </Button>
-          </div>
-        </nav>
-      </header>
-
+    <div className="min-h-screen bg-linear-to-b from-white via-[#f3f7f0] to-white text-slate-900">
       {/* Main Content */}
       <main className="pb-24">
         {/* Hero Section */}
@@ -112,7 +105,7 @@ export default function Home() {
               priority
               className="h-full w-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-br from-black/70 via-black/50 to-black/30" />
+            <div className="absolute inset-0 bg-linear-to-br from-black/70 via-black/50 to-black/30" />
           </div>
           <div className="relative mx-auto flex max-w-7xl flex-col gap-12 px-6 py-24 lg:flex-row lg:items-center lg:justify-between lg:py-28">
             <div className="max-w-2xl space-y-6 text-white">
@@ -177,7 +170,7 @@ export default function Home() {
         </section>
 
         {/* Why Gridly Section */}
-        <section id="about" className="scroll-mt-24 bg-white py-20">
+        <section className="scroll-mt-24 bg-white py-20">
           <div className="mx-auto grid max-w-6xl items-center gap-12 px-6 lg:grid-cols-[1.1fr_0.9fr]">
             <div className="space-y-6">
               <span className="text-sm font-semibold uppercase tracking-[0.2em] text-[#36a03d]">
@@ -213,9 +206,9 @@ export default function Home() {
               </ul>
             </div>
             <div className="relative overflow-hidden rounded-3xl bg-slate-900/10 shadow-xl">
-              <div className="absolute inset-0 bg-gradient-to-tr from-[#36a03d]/20 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-linear-to-tr from-[#36a03d]/20 via-transparent to-transparent" />
               <Image
-                src="/images/detail-image.avif"
+                src="/images/detail-img.avif"
                 alt="Clean energy site"
                 width={640}
                 height={480}
@@ -233,10 +226,7 @@ export default function Home() {
         </section>
 
         {/* How Gridly Works Section */}
-        <section
-          id="map"
-          className="scroll-mt-24 bg-[#0f1f14] py-20 text-white"
-        >
+        <section className="scroll-mt-24 bg-[#0f1f14] py-20 text-white">
           <div className="mx-auto flex max-w-6xl flex-col gap-10 px-6">
             <div className="flex flex-col gap-4 text-center">
               <span className="mx-auto inline-flex items-center gap-2 rounded-full border border-white/15 px-5 py-1 text-sm font-medium text-white/80">
@@ -336,29 +326,24 @@ export default function Home() {
           <div className="mx-auto max-w-6xl px-6">
             <div className="grid gap-6 lg:grid-cols-[2fr_1fr]">
               <div className="grid gap-6 sm:grid-cols-2">
-                {[
-                  "/images/renewable-hub.avif",
-                  "/images/solar-panels.avif",
-                  "/images/hero-image.avif",
-                  "/images/detail-image.avif",
-                ].map((image, index) => (
+                {featuredProjects.map((project, index) => (
                   <div
-                    key={`${image}-${index}`}
+                    key={`${project.src}-${index}`}
                     className="group relative overflow-hidden rounded-3xl bg-slate-200"
                   >
                     <Image
-                      src={image}
-                      alt={`Renewable energy showcase ${index + 1}`}
+                      src={project.src}
+                      alt={`${project.title}`}
                       width={480}
                       height={360}
                       className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-80 transition group-hover:opacity-90" />
+                    <div className="absolute inset-0 bg-linear-to-t from-black/60 via-black/20 to-transparent opacity-80 transition group-hover:opacity-90" />
                     <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-white/90">
                       <div>
-                        <p className="text-sm font-medium">Project focus</p>
-                        <p className="text-xs uppercase tracking-[0.3em] text-white/60">
-                          Clean energy in action
+                        <p className="text-sm font-medium">{project.title}</p>
+                        <p className="text-xs tracking-wide text-white/70">
+                          {project.description}
                         </p>
                       </div>
                       <ArrowRight className="h-4 w-4" />
@@ -391,8 +376,8 @@ export default function Home() {
         </section>
 
         {/* Contact Section */}
-        <section id="contact" className="scroll-mt-24 py-20">
-          <div className="mx-auto max-w-5xl rounded-4xl border border-[#36a03d]/15 bg-gradient-to-br from-white via-[#f4faf2] to-white px-8 py-12 shadow-[0_18px_60px_rgba(15,47,24,0.08)]">
+        <section className="scroll-mt-24 py-20">
+          <div className="mx-auto max-w-5xl rounded-4xl border border-[#36a03d]/15 bg-linear-to-br from-white via-[#f4faf2] to-white px-8 py-12 shadow-[0_18px_60px_rgba(15,47,24,0.08)]">
             <div className="flex flex-col gap-8 text-center md:text-left md:gap-6 md:flex-row md:items-center md:justify-between">
               <div className="max-w-xl space-y-4">
                 <span className="text-xs font-semibold uppercase tracking-[0.3em] text-[#2e8230]">
