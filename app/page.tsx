@@ -8,6 +8,7 @@ import {
   Thermometer,
   Wind,
 } from "lucide-react";
+import Link from "next/link";
 
 const energyCategories = [
   {
@@ -63,7 +64,6 @@ const impactStats = [
   { label: "Avg. response time", value: "48h" },
 ];
 
-// Featured projects (image, focus, and description)
 const featuredProjects = [
   {
     src: "/images/renewable-hub.avif",
@@ -126,7 +126,7 @@ export default function Home() {
                   className="rounded-full bg-[#36a03d] px-7 text-sm font-semibold tracking-tight text-white shadow-lg shadow-[#36a03d]/20 transition hover:bg-[#2e8230]"
                   size="lg"
                 >
-                  Find Experts
+                  <Link href="/grid-map">Find Experts</Link>
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
                 <Button
@@ -135,7 +135,7 @@ export default function Home() {
                   size="lg"
                   asChild
                 >
-                  <a href="#about">Learn More</a>
+                  <a href="#learn-more">Learn More</a>
                 </Button>
               </div>
               <div className="grid gap-2 text-sm text-white/70 sm:grid-cols-2">
@@ -170,7 +170,7 @@ export default function Home() {
         </section>
 
         {/* Why Gridly Section */}
-        <section className="scroll-mt-24 bg-white py-20">
+        <section id="learn-more" className="scroll-mt-24 bg-white py-20">
           <div className="mx-auto grid max-w-6xl items-center gap-12 px-6 lg:grid-cols-[1.1fr_0.9fr]">
             <div className="space-y-6">
               <span className="text-sm font-semibold uppercase tracking-[0.2em] text-[#36a03d]">

@@ -136,3 +136,7 @@ body {
     cursor: pointer;
   }
 }
+
+* {
+  scroll-behavior: smooth;
+}

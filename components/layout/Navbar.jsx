@@ -23,13 +23,13 @@ export default function Navbar() {
         <Link
           href="/"
           className="flex items-center gap-2"
-          aria-label="Gridly home"
+          aria-label="Gridly Home"
         >
           <Image
             src="/images/gridly-logo.png"
             alt="Gridly"
-            width={40}
-            height={40}
+            width={56}
+            height={56}
             priority
           />
         </Link>
@@ -103,7 +103,7 @@ export default function Navbar() {
                       className="w-full rounded-full bg-[#36a03d] py-6 text-base font-semibold text-white shadow-lg shadow-[#36a03d]/20 transition-all hover:bg-[#2e8230] hover:shadow-xl hover:shadow-[#36a03d]/30 active:scale-[0.98]"
                       asChild
                     >
-                      <Link href="/#map">Launch Map</Link>
+                      <Link href="/grid-map">Launch Map</Link>
                     </Button>
                     <p className="px-2 text-center text-xs text-slate-500">
                       Discover renewable energy experts across the Philippines
@@ -131,7 +131,7 @@ export default function Navbar() {
             className="rounded-full bg-[#36a03d] px-6 font-semibold text-white shadow-lg shadow-[#36a03d]/20 transition hover:bg-[#2e8230] hidden md:inline-flex"
             asChild
           >
-            <Link href="/#map">Launch Map</Link>
+            <Link href="/grid-map">Launch Map</Link>
           </Button>
         </div>
       </nav>
