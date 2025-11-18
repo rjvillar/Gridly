@@ -10,13 +10,18 @@ import { Menu } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function Navbar() {
-  const navLinks = [
-    { href: "/", label: "Home" },
-    { href: "/about", label: "About" },
-    { href: "/contact", label: "Contact" },
-  ];
+interface NavLink {
+  href: string;
+  label: string;
+}
 
+const navLinks: NavLink[] = [
+  { href: "/", label: "Home" },
+  { href: "/about", label: "About" },
+  { href: "/contact", label: "Contact" },
+];
+
+export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-white/40 bg-white/70 backdrop-blur-xl">
       <nav className="mx-auto flex w-full max-w-7xl items-center justify-between px-6 py-4">
@@ -74,7 +79,7 @@ export default function Navbar() {
                       width={85}
                       height={85}
                     />
-                    <SheetTitle className="text-left text-xl font-semibold tracking-tight text-slate-900 hidden">
+                    <SheetTitle className="hidden text-left text-xl font-semibold tracking-tight text-slate-900">
                       Gridly
                     </SheetTitle>
                   </div>
@@ -128,7 +133,7 @@ export default function Navbar() {
           </Sheet>
 
           <Button
-            className="rounded-full bg-[#36a03d] px-6 font-semibold text-white shadow-lg shadow-[#36a03d]/20 transition hover:bg-[#2e8230] hidden md:inline-flex"
+            className="hidden rounded-full bg-[#36a03d] px-6 font-semibold text-white shadow-lg shadow-[#36a03d]/20 transition hover:bg-[#2e8230] md:inline-flex"
             asChild
           >
             <Link href="/grid-map">Launch Map</Link>
